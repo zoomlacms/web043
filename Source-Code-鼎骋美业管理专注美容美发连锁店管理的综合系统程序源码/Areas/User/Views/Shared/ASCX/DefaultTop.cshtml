@@ -1,0 +1,11 @@
+﻿@functions{
+    string usernavBan = ZoomLa.Components.SiteConfig.UserConfig.UserNavBan;
+    public bool IsShowNav(string nav)
+    {
+        if (string.IsNullOrEmpty(usernavBan)) { return true; }
+        else { return !usernavBan.Contains(nav); }
+    }
+ }
+@{
+   ZoomLa.Model.M_UserInfo mu=new ZoomLa.BLL.B_User().GetLogin();
+}

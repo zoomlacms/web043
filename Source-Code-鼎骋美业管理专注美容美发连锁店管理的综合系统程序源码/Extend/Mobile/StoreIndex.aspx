@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StoreIndex.aspx.cs" Inherits="Extend_Mobile_StoreIndex" MasterPageFile="~/Extend/Common/Wechat.master" %>

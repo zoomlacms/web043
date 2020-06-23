@@ -1,0 +1,145 @@
+﻿@using ZoomLa.BLL
+@using ZoomLa.Model
+@using ZoomLa.Common
+@using System.Data
+@using ZoomLa.SQLDAL
+@using System.Data.SqlClient
+@using ZoomLa.Sns
+@model ZoomLa.Model.M_UserInfo
+@functions{
+    B_Ex_ERole roleBll = new B_Ex_ERole();
+    public M_UserInfo mu { get { return new B_User().GetLogin(); } }
+    public bool CheckAuth(M_CommonData conMod, M_Ex_ERole roleMod, string auth)
+    {
+        if (conMod.SuccessfulUserID == mu.UserID) { return true; }
+        if (roleMod.ID < 1 || roleMod == null) { return false; }
+        return roleMod.RoleAuth.IndexOf(auth) >= 0;
+    }
+}
+@{
+
+    M_CommonData conMod = new B_Content().SelReturnModel(mu.SiteID);
+    M_Ex_ERole roleMod = roleBll.SelReturnModel(mu.PageID);
+    if (roleMod == null) { roleMod = new M_Ex_ERole(); }
+    //---------------------------------------------------------
+    string stime = DateTime.Now.ToString("yyyy/MM/dd"), etime = DateTime.Now.ToString("yyyy/MM/dd");
+    Sale_Filter defFilter = new Sale_Filter()
+    {
+        sid = mu.SiteID,
+        stime = stime,
+        etime = etime
+    };
+    //商品销售与充值汇总(已付款)
+    double sale_total = ExSale.Sale_Total(defFilter);
+    //充值金额
+    double mcard_recharge = ExSale.Sale_Total(new Sale_Filter()
+    {
+        sid = mu.SiteID,
+        stime = stime,
+        etime = etime,
+        orderType = "5"
+    });
+    //会员卡消费金额(订单支付方式为会员卡)
+    double mcard_consume = ExSale.Sale_Total(new Sale_Filter()
+    {
+        sid = mu.SiteID,
+        stime = stime,
+        etime = etime,
+        payPlat = (int)M_PayPlat.Plat.ECPSS,
+    });
+    //今日到店已开单付款的人数
+    int user_count = ExSale.Sale_User_Count(defFilter);
+    int order_count = ExSale.Sale_Order_Count(defFilter).count;
+    int preOrder_count = ExSale.PreOrder_Count(defFilter);
+    int user_new_count = ExSale.User_New_Count(defFilter);
+}
+        @section head{
+<title>会员中心-@Call.SiteName</title>
+}
+    @section content{
+                              
+<main>
+    <div class="userindex_right">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/User/UserShop/">店铺概况</a></li>
+        </ul>
+    </div>
+    <div class="userindex_ul">
+        <ul class="nav">
+            <li class="nav-item">
+                <p>主营收入</p>
+                <span>@sale_total.ToString("F2")</span>
+            </li>
+            <li class="nav-item">
+                <p>充值金额</p>
+                <span>@mcard_recharge.ToString("F2")</span>
+            </li>
+            <li class="nav-item">
+                <p>耗卡金额</p>
+                <span>@mcard_consume.ToString("F2")</span>
+            </li>
+            <li class="nav-item">
+                <p>赠送消耗</p>
+                <span>0.00</span>
+            </li>
+            <li class="clearfix"></li>
+        </ul>
+        <ul class="nav">
+            <li class="nav-item">
+                <p>到店人数</p>
+                <span>@user_count</span>
+            </li>
+            <li class="nav-item">
+                <p>预约人数</p>
+                <span>@preOrder_count</span>
+            </li>
+            <li class="nav-item">
+                <p>订单数</p>
+                <span>@order_count</span>
+            </li>
+            <li class="nav-item">
+                <p>新增会员</p>
+                <span>@user_new_count</span>
+            </li>
+            <li class="clearfix"></li>
+        </ul>
+    </div>
+    <div class="userindex_right">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="javascript:;">常用功能</a></li>
+        </ul>
+    </div>
+    <p class="userindex_right_p">
+        <a href="/Extend/Order/FastOrder.aspx"> <i class="fa fa-file-text-o" aria-hidden="true"></i> 快速开单</a>
+        <a href="/Extend/Order/PreOrder.aspx"> <i class="fa fa-tags" aria-hidden="true"></i> 新增预约</a>
+        @if (CheckAuth(conMod,roleMod,"employ"))
+        {
+            <a href="/Extend/Employee.aspx"> <i class="fa fa-plus" aria-hidden="true"></i> 员工管理</a>
+        }
+        <a href="/Extend/UC/MCardAdd.aspx"> <i class="fa fa-plus" aria-hidden="true"></i> 快速开卡</a>
+        <a href="/Extend/UC/MCardRecharge.aspx"> <i class="fa fa-money" aria-hidden="true"></i> 会员充值</a>
+        <a href="/Extend/Client.aspx"> <i class="fa fa-user-plus" aria-hidden="true"></i> 新增会员</a>
+        <a href="/Store/StoreIndex?id=@mu.SiteID" target="_blank"> <i class="fa fa-hand-o-up" aria-hidden="true"></i> 访问网店</a>
+        @if (CheckAuth(conMod, roleMod, "sale"))
+        {
+            <a href="/Extend/Report/StoreSale.aspx"><i class="fa fa-bandcamp" aria-hidden="true"></i>报表罗盘</a>
+        }
+        <div class="clearfix"></div>
+    </p>
+    <div class="userindex_right">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="javascript:;">代办事项</a></li>
+        </ul>
+    </div>
+    <p class="userindex_right_o">
+        <a href="/Extend/Order/PreOrder.aspx">今日预约-待处理  <span><b>@preOrder_count</b>个订单</span></a>
+        <a href="/User/UserShop/OrderList">服务订单  <span><b>0</b>个订单</span></a>
+        <a href="/User/UserShop/OrderList">产品订单  <span><b>0</b>个订单</span></a>
+    </p>
+</main>
+
+
+}
+@section script{
+
+    }

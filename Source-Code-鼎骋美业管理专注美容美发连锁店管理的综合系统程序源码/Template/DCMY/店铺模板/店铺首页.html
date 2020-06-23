@@ -1,0 +1,66 @@
+﻿{ZL.Source id="店铺模型数据源标签"/}<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="店铺模型数据源标签" FD="StoreName" page="0"/}</title>
+<link href="/dist/css/weui.min.css" rel="stylesheet" />
+{ZL:Boot4()/}
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<link href="/dist/css/swiper.min.css" rel="stylesheet"/>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/dist/js/swiper.min.js"></script>
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/JS/Controls/B_User.js"></script>
+<link rel="stylesheet" href="/dist/css/weui.min.css">
+
+</head>
+<body>
+<div class="user_top d-none d-sm-block">
+<div class="user_top_circle"><div class="user_top_circle_i"></div></div>
+<div class="user_top_i">
+<img src="{ZL.Label id="获取指定店铺Logo" StoreID="{$GetRequest(id)$}" /}" onerror="javascript:this.src='/images/userface/noface.png'"  />
+<p>{ZL.Label id="获取指定店铺名称" StoreID="{$GetRequest(id)$}" /}</p>
+</div>
+</div>
+
+<div class="store_ad">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner1.jpg" alt="" /></div>
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner2.jpg" alt="" /></div>
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner3.jpg" alt="" /></div>
+</div>
+</div>
+</div>
+
+<div class="shop_list">
+{ZL.Label id="输出指定商品列表_分页[按店铺]" userShopID="{$GetRequest(id)$}" ShowNum="10" /}
+</div>
+
+<div class="weui-tabbar">
+    <a href="/Extend/Mobile/StoreIndex.aspx" class="weui-tabbar__item weui-bar__item_on">
+        <i class="fa fa-home weui-tabbar__icon"></i>
+        <p class="weui-tabbar__label">商城</p>
+    </a>
+    <a href="/Extend/Mobile/Find.aspx" class="weui-tabbar__item">
+        <i class="fa fa-comments-o weui-tabbar__icon"></i>
+        <p class="weui-tabbar__label">活动</p>
+    </a>
+    <a href="/Extend/Mobile/UserInfo.aspx" class="weui-tabbar__item">
+        <i class="fa fa-user weui-tabbar__icon"></i>
+        <p class="weui-tabbar__label">我</p>
+    </a>
+</div>
+<script>
+var swiper = new Swiper('.swiper-container', {
+	autoplay:4000,
+	pagination: '.swiper-pagination',
+	paginationClickable:true,	
+	grabCursor:true,
+	loop:true
+});
+	
+$("#shop").addClass("weui-bar__item_on");
+</script>
+</body>
+</html>

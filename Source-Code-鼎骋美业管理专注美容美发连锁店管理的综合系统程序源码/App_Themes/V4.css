@@ -1,0 +1,34 @@
+﻿@charset "utf-8";
+/* Powered by Zoomla!逐浪CMS  www.z01.com */
+body{background: #f8f9fb;}
+a{color:#000;}
+.yunHome{ margin-top:2em;}
+.yunHome_l{ border-right:1px solid #ccc;}/*首屏左边*/
+.yunHome_l ul{ list-style:none; font-size:1.16em; padding-bottom:8em;}
+.yunHome_l li{line-height:3.2em;}
+.yunHome_l li i{ padding:0 10px;color:#999;}
+.yunHome_tit{ font-size:1.72em; padding:0 0 0.8em 1.42em;}
+
+.yunHome_scolls { padding-top: 0; padding-bottom: 15px;background: rgba(255,255,255,0.8);box-shadow: 0px 1px 1px 0px rgba(50,50,50,0.1);}
+.yunHome_scolls .navbar-brand{display:block;}
+.yunHome_scolls .navbar-brand img{height:2.8em;}
+.yunHome_scolls .navbar-header span{ display:block; float:left; margin-top:0.56em; padding-left:5px;color:#ccc;font-size:2.1em; border-left:1px solid #ccc;}
+.yunHome_scolls .navbar-right{padding-top:1em; padding-right:1em;}
+.yunHome_show{width:94%; min-height:30em; background:#fff; border-radius:10px; box-shadow: 0 1px 2px rgba(150,150,150,0.3);}
+.yunHome_show  table{margin-top:20px;}
+.yunHome_show span{padding-left:2em; line-height:8em;}
+.yunHome_foot{ padding-top:0.5em; padding-bottom:0.5em; padding-left:1em; border-top:1px solid #eee; color:#898989; background:#fafafa; font-family:"Microsoft Yahei";}
+
+
+@media(max-width:768px)/*手机等小屏下专用*/
+{
+	
+
+}
+@media(max-height:650px){
+@media (min-width:768px) /*大于768px私有*/
+{
+}
+
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuWm9vbWxhLmNu */

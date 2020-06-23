@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>319</LabelID>
+    <LabelName>全站底部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div class="home_foot d-none d-sm-block"&gt;
+&lt;div class="container"&gt;
+&lt;div class="row"&gt;
+&lt;div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"&gt;
+&lt;div class="foot_l"&gt;
+&lt;img src="{$CssDir/}images/QRcode.jpg" alt="二维码"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"&gt;
+&lt;div class="foot_l"&gt;
+&lt;ul&gt;
+{ZL.Label id="输出指定节点下文章列表_不分页" NodeID="4" ShowNum="5" /}
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"&gt;
+&lt;div class="foot_tel"&gt;
+&lt;p&gt;电话: 021-88888&lt;/p&gt;
+&lt;p&gt;邮箱: 88888&lt;/p&gt;
+&lt;p&gt;地址: 上海市浦东新区&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"&gt;
+&lt;div class="foot_r"&gt;
+&lt;a href="#"&gt; &lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;  加入鼎骋美业&lt;/a&gt;
+&lt;p&gt;这里用态度和科技改变世界&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

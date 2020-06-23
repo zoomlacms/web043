@@ -1,0 +1,102 @@
+﻿{ZL.Source id="文章模型数据源标签"/}<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="文章模型数据源标签" FD="Title" page="0"/}_{$SiteName/}</title>
+<meta name="Keywords" content="{SField sid="文章模型数据源标签" FD="Tagkey" page="0"/}" />
+<meta name="Description" content="{SField sid="文章模型数据源标签" FD="Title" page="0"/}">
+{ZL:Boot4()/}
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<link rel="stylesheet" href="/dist/css/weui.min.css">
+<script src="/js/scrolltopcontrol.js" type="text/javascript"></script>
+<script src="/JS/Controls/B_User.js"></script>
+<style>
+.home_nav { position:absolute;}
+.news_list li { padding-left：5em; padding-top2m;}.news_c .news_date { float: left; margin-right: 2em; }
+.news_date b { color: #333; font-weight: 700; font-size: 3.6em; }
+.news_date span { color: #666; font-size: 1em; }
+
+.news_c .news_date { float: left; margin-right: 2em; }
+.news_c .news_date b { color: #333; font-weight: 700; font-size: 3.6em; }
+.news_c .news_date span { color: #666; font-size: 1em; }
+.weui-tabbar { position:fixed;}
+</style>
+</head>
+<body style=" background:#f2f2f2;">
+{ZL.Label id="全站头部"/}
+<div class="news_banner d-none d-sm-block">
+<div class="container">
+<div class="intro position-relative">
+<h2><img src="{$CssDir/}images/logo.svg" alt="鼎骋美业" onerror="javascript:this.src='/images/logo.svg'"></h2>
+</div>	
+</div>	
+</div>
+<main role="main">
+<div class="content_nav">
+<div class="container">
+<ul>
+<li>
+{ZL.Label id="指定节点下子栏目列表" ParentID="{SField sid="文章模型数据源标签" FD="FirstNodeID" page="0"/}" ShowNum="10" /}
+</ul>
+</div><div class="clearfix"></div>
+</div>
+
+
+<div class="content_box container">
+<div class="row">
+<div class="col-lg-12 col-12">
+<div class="content_l">
+<h2>{SField sid="文章模型数据源标签" FD="Title" page="0"/}</h2>
+<div class="myAbbr">
+<span id="CreateTime">发布时间：{ZL:FormatDate({SField sid="文章模型数据源标签" FD="CreateTime" page="0"/},yyyy-MM-dd)/}</span> <span id="Hits" class="hidden">浏览次数：<SCRIPT language=javascript src="/Common/GetHits.aspx?id={SField sid="文章模型数据源标签" FD="GeneralID" page="0"/}"></SCRIPT>  <a href="/Class_100/NodePage.aspx?t={SField sid="文章模型数据源标签" FD="Title" page="0"/}-来自{$SiteName/}&urls={$SiteURL/}/item/{SField sid="文章模型数据源标签" FD="GeneralID" page="0"/}.aspx" target="_blank"><i class="fa  fa-share-alt-square"></i>分享网址</a></span>
+<a href="javascript:ts('myContent',-1)"><i class="fa fa-search-minus" aria-hidden="true"></i> 减小字体</a>  <a href="javascript:ts('myContent',1)"><i class="fa fa-search-plus" aria-hidden="true"></i>放大字体</a><br/><br/>
+</div>
+<div class="myContent">{SField sid="文章模型数据源标签" FD="content" page="{SField sid="文章模型数据源标签" FD="content" page="0"/}"/}</div>
+
+<div class="back"><i class="fa fa-hand-o-left" style="font-size:1.4em; margin-right:10px;"></i><a href="{ZL:GetNodeLinkUrl({SField sid="文章模型数据源标签" FD="NodeID" page="0"/})/}">返回列表</a></div>
+
+</div>
+</div>
+</div>
+</div>
+</main>
+{ZL.Label id="全站底部"/}
+{ZL.Label id="微站底部"/}
+</body>
+</html>
+<script>
+//检测固顶事件
+var IO=document.getElementById('home_nav2'),Y=IO,H=0,IE6;
+IE6=window.ActiveXObject&&!window.XMLHttpRequest;
+while(Y){H+=Y.offsetTop;Y=Y.offsetParent};
+if(IE6)
+    IO.style.cssText="position:absolute;top:expression(this.fix?(document"+
+        ".documentElement.scrollTop-(this.javascript||"+H+")):0)";
+window.onscroll=function (){
+    var d=document,s=Math.max(d.documentElement.scrollTop,document.body.scrollTop);
+     if(s>H&&IO.fix||s<=H&&!IO.fix)return;
+    if(!IE6)IO.style.position=IO.fix?"":"fixed";        
+    IO.fix=!IO.fix;
+};
+try{document.execCommand("BackgroundImageCache",false,true)}catch(e){};
+
+//字体放大缩小
+var tgs = new Array('p');
+var szs = new Array( 'xx-small','x-small','small','medium','large','x-large','xx-large' );
+var startSz = 2;
+function ts( trgt,inc ) {
+	if (!document.getElementById) return
+	var d = document,cEl = null,sz = startSz,i,j,cTags;
+	sz += inc;
+	if ( sz < 0 ) sz = 0;
+	if ( sz > 6 ) sz = 6;
+	startSz = sz;
+	if (!(cEl = d.getElementById(trgt))) cEl = d.getElementsByClassName(trgt)[0];
+	cEl.style.fontSize = szs[ sz ];
+	for ( i = 0 ; i < tgs.length ; i++ ) {
+		cTags = cEl.getElementsByTagName( tgs[ i ] );
+		for ( j = 0 ; j < cTags.length ; j++ ) cTags[ j ].style.fontSize = szs[ sz ];
+	}
+}
+</script>

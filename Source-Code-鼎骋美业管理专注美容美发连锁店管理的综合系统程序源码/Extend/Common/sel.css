@@ -1,0 +1,3 @@
+﻿#pro_ul li{float:left;width:30%;margin-right:3px;margin-bottom:5px;cursor:pointer;}
+#pro_ul li:hover{background-color:#84aecc;color:#fff;}
+#employ_ul li{float:left;width:120px;height:100px;cursor:pointer;margin-right:5px;margin-bottom:5px;}

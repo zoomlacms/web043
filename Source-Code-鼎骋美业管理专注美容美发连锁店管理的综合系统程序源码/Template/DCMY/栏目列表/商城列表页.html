@@ -1,0 +1,43 @@
+﻿{ZL.Source id="节点栏目信息数据源"/}<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{SField sid="节点栏目信息数据源" FD="NodeName" page="0"/}_{$SiteName/}</title>
+<link href="/dist/css/weui.min.css" rel="stylesheet" />
+{ZL:Boot4()/}
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<link href="/dist/css/swiper.min.css" rel="stylesheet"/>
+<script src="/JS/Controls/B_User.js"></script>
+<script src="/dist/js/swiper.min.js"></script>
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+<script src="/JS/Controls/B_User.js"></script>
+<link rel="stylesheet" href="/dist/css/weui.min.css">
+</head>
+<body>
+<div class="store_ad">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner1.jpg" alt="" /></div>
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner2.jpg" alt="" /></div>
+<div class="swiper-slide"><img src="{$CssDir/}images/shop_banner3.jpg" alt="" /></div>
+</div>
+</div>
+</div>
+<div class="shop_list">
+{ZL.Label id="输出指定商品列表_分页" NodeID="{SField sid="节点栏目信息数据源" FD="NodeID" page="0"/}" ShowNum="10" /}
+</div>
+{ZL.Label id="微站底部"/}
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+	autoplay:4000,
+	pagination: '.swiper-pagination',
+	paginationClickable:true,	
+	grabCursor:true,
+	loop:true
+});
+	
+$("#shop").addClass("weui-bar__item_on");
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>326</LabelID>
+    <LabelName>微站底部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent> &lt;div class="weui-tabbar"&gt;
+&lt;!-- &lt;a href="/Class_6/Default.aspx" class="weui-tabbar__item" id="shop"&gt; --&gt;
+&lt;a href="/Store/StoreIndex?id={ZL.Label id="根据商品ID检索出店铺ID" proID="{SField sid="常规商品数据源" FD="ID" page="0"/}" /}" class="weui-tabbar__item" id="shop"&gt;
+&lt;i class="fa fa-home weui-tabbar__icon"&gt;&lt;/i&gt;
+&lt;p class="weui-tabbar__label"&gt;商城&lt;/p&gt;
+&lt;/a&gt;
+&lt;a href="/Class_3/Default.aspx" class="weui-tabbar__item" id="huodong"&gt;
+&lt;i class="fa fa-comments-o weui-tabbar__icon"&gt;&lt;/i&gt;
+&lt;p class="weui-tabbar__label"&gt;活动&lt;/p&gt;
+&lt;/a&gt;
+&lt;a href="/Class_4/Default.aspx" class="weui-tabbar__item" id="faxian"&gt;
+&lt;i class="fa fa-compass weui-tabbar__icon"&gt;&lt;/i&gt;
+&lt;p class="weui-tabbar__label"&gt;发现&lt;/p&gt;
+&lt;/a&gt;
+&lt;a href="/User" class="weui-tabbar__item"&gt;
+&lt;i class="fa fa-user weui-tabbar__icon"&gt;&lt;/i&gt;
+&lt;p class="weui-tabbar__label"&gt;我&lt;/p&gt;
+&lt;/a&gt;
+&lt;/div&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>

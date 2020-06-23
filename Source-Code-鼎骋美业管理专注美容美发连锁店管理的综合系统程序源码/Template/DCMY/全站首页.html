@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="msapplication-TileColor" content="#1A0066"/>
+<meta name="msapplication-TileImage" content="/images/win8_symbol_140x140.png"/>
+<title>{$SiteName/}_首页</title>
+{$MetaKeywords/}
+{$MetaDescription/}
+{ZL:Boot4()/}
+<link href="{$CssDir/}global.css?Version={ZL.Label id="前端样式版本号"/}" rel="stylesheet"/>
+{ZL:GetCSS(2,0)/}
+<script src="/js/scrolltopcontrol.js"></script>
+<script src="{$CssDir/}js/venobox.min.js"></script>
+</head>
+<body>
+<div class="home_nav" id="home_nav">
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light" id="home_nav">
+<a class="navbar-brand mr-2 d-block d-sm-none" href="/"><img src="{$LogoUrl/}" alt="{$SiteName/}" onerror="javascript:this.src='/images/logo.svg'" /></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="/">首页</a></li>
+<li class="nav-item"><a class="nav-link" href="{ZL:GetNodeLinkUrl(3)/}">功能介绍</a></li>
+<li class="nav-item"><a class="nav-link" href="{ZL:GetInfoUrl(9)/}">使用帮助</a></li>
+<li class="nav-item"><a class="nav-link" href="{ZL:GetInfoUrl(10)/}">关于我们</a></li>
+<li class="nav-item"><a class="nav-link" href="/User"> <i class="fa fa-user"></i> </a></li>
+</ul>
+</div>
+</nav>
+<a href="javascript:;" id="close-product" class="icon-close">X</a>
+</div>
+</div>
+<!-- home_nav end! -->
+
+<div id="primary">
+<div id="products">
+
+<div class="go" style="width:300%;position:relative;left:0px;height:">
+<div class="product" id="product-core">
+<div class="intro">
+<h2><img src="{$LogoUrl/}" alt="{$SiteName/}" onerror="javascript:this.src='/images/logo.svg'" /></h2>
+<div class="keywords">
+<ul flex="main:justify">
+<li>
+<strong>自由</strong>
+<i>Freedom</i>
+</li>
+<li>
+<strong>简单</strong>
+<i>Pure</i>
+</li>
+<li>
+<strong>平等</strong>
+<i>Equality</i>
+</li>
+</ul>
+</div>
+<div class="action">
+<a href="javascript:;" class="show-product" rel="1">了解核心能力体系</a>
+</div>
+</div>
+<div class="detail">
+<div class="wrap">
+<div class="clip">
+<h2>法律人职场能力体系</h2>
+<ul>
+<li class="core-1">核心业务能力</li>
+<li class="core-2">市场开拓能力</li>
+<li class="core-3">法律新技术能力</li>
+<li class="core-4">必备技术</li>
+<li class="core-5">工具方法</li>
+<li class="core-6">获取资源</li>
+<li class="core-7">降低成本</li>
+<li class="core-8">提高效率</li>
+<li class="core-9">自身价值</li>
+</ul>
+</div>
+<canvas id="core-lines" width="800" height="400"></canvas>
+<div class="summary">
+作为一家与众不同的法学院，鼎骋美业课程传递的不仅仅是知识，更是思维、技能与工具。在这里，刷新视界，重构法律人的职场能力体系；在这里，深度社交，跻身法律共同体的核心圈层。
+</div>
+</div>
+</div>
+</div>
+<div class="product" id="product-alpha">
+<div class="intro">
+<h2>技术驱动法律</h2>
+<div class="keywords">
+<ul flex="main:justify">
+<li>
+<strong>大数据</strong>
+<i>Bid Data</i>
+</li>
+<li>
+<strong>可视化</strong>
+<i>Visualization</i>
+</li>
+<li>
+<strong>人工智能</strong>
+<i>Intelligence</i>
+</li>
+</ul>
+</div>
+<div class="action">
+<a href="javascript:;" class="show-product" rel="2">了解 Alpha</a>
+</div>
+</div>
+<div class="detail">
+<div class="wrap">
+<div class="clip">
+<h2>不止律所管理系统</h2>
+<div class="circles" id="circles">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
+</div>
+<div class="summary">
+Alpha，集律所管理、法律大数据和专业服务为一体的智能办案系统，将可视化、大数据和人工智能三大前沿技术融入每一个模块，提高律师专业判断的准确度，实时反馈团队成员的参与度，增强客户享受法律服务的满意度。
+</div>
+</div>
+</div>
+</div>
+<div class="product" id="product-team">
+<div class="intro">
+<h2>人文成就团队</h2>
+<div class="keywords">
+<ul flex="main:justify">
+<li>
+<strong>学习</strong>
+<i>Learn</i>
+</li>
+<li>
+<strong>视野</strong>
+<i>Horizon</i>
+</li>
+<li>
+<strong>胸怀</strong>
+<i><div>Mind</div></i>
+</li>
+</ul>
+</div>
+<div class="action">
+<a href="javascript:;" class="show-product" rel="3">了解团队宝</a>
+</div>
+</div>
+<div class="detail">
+<div class="wrap">
+<div class="clip">
+<h2>痴迷于团队、执着于传承</h2>
+<ul>
+<li class="team-1">战略</li>
+<li class="team-2">组织</li>
+<li class="team-3">定位</li>
+<li class="team-4">市场</li>
+<li class="team-5">招聘</li>
+<li class="team-6">软件</li>
+</ul>
+</div>
+<div class="summary">
+单枪匹马闯世界的时代已然结束，团队才是律所传承的基础，团队宝为您量身定制团队建设与发展方案，从组织架构到薪酬制度，从人才招聘到团队建设，从产品研发到品牌推广，全面帮助律师打造梦之队。
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<a class="slidesjs-next slidesjs-navigation" href="#" title="Next" style=" text-decoration:none; color:#fff; left:0;">&lt;</a>
+<a class="slidesjs-previous  slidesjs-navigation" href="#" title="previous" style=" text-decoration:none; color:#fff; right:0;">&gt;</a>
+<ul class="slidesjs-pagination">
+<li class="slidesjs-pagination-item">
+<a class="active" href="#" data-slidesjs-item="0"></a>
+</li>
+<li class="slidesjs-pagination-item">
+<a href="#" data-slidesjs-item="1"></a>
+</li>
+<li class="slidesjs-pagination-item">
+<a href="#" data-slidesjs-item="2"></a>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- home_slide end! -->
+
+<div class="home_video">
+<div class="container">
+<div class="row">
+<div class="col-md-5">
+<a class="video_c">
+<img src="{$CssDir/}images/video01.jpg" alt="视野">
+<span class="title">
+<div class="title_c">
+<i>2017双十二微商集训</i>
+<strong>视野</strong>
+</div>
+<i class="fa fa-play-circle-o" id="video_play_icon"></i>
+</span>
+</a>
+</div>
+<div class="col-md-5 offset-md-2">
+<a class="video_c video_c2">
+<img src="{$CssDir/}images/video02.jpg" alt="文化">
+<span class="title">
+<div class="title_c">
+<i>价值百万的营销视频</i>
+<strong>专家视频</strong>
+</div>
+<i class="fa fa-play-circle-o" id="video_play_icon"></i>
+</span>
+</a>
+</div>
+</div>
+<div class="video_summary">“梦想总是要有的，万一哪天实现了呢？--鼎骋营销训练营《经典语评》”</div>
+</div>
+<div class="video_play">
+<div class="container video_play_c" >
+<video src="{$CssDir/}video/1.mp4" controls width="100%" height="400"></video>
+</div>
+<a href="javascript:;" class="close_video" >X</a>
+</div>
+<div class="video_play" >
+<div class="container video_play_c" >
+<video src="{$CssDir/}video/1.mp4" controls width="100%" height="400"></video>
+</div>
+<a href="javascript:;" class="close_video"><i class="fa fa-close"></i></a>
+</div>
+</div>
+
+<!-- home_video end! -->
+<div id="event" class="wrapper">
+<div class="block">
+<ul id="event-photos">
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+<li class="event-photo-0"></li>
+</ul>
+<div class="wrap">
+<div class="container">
+<ul id="event-buttons" class="row justify-content-between">
+<li rel="1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<a href="javascript:;">
+<i class="fa fa-laptop"></i>
+<strong>发展</strong>大事记
+</a>
+</li>
+<li rel="2" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<a href="javascript:;">
+<i class=" fa fa-user"></i>
+<strong>团队</strong>大事记
+</a>
+</li>
+<li rel="3" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<a href="javascript:;">
+<i class=" fa fa-cubes"></i>
+<strong>平台</strong>大事记
+</a>
+</li>
+<div class="clearfix"></div>
+</ul>
+</div>
+</div>
+<div class="thumbs">
+<div class="event-detail" id="event-detail-1" >
+<div class="container">
+<a href="javascript:;" class="close icon-close">X</a>
+<a href="javascript:;" class="prev icon-arrow-left">&lt;</a>
+<a href="javascript:;" class="next icon-arrow-right">&gt;</a>
+<div class="wrap">
+<div class="event-timeline" id="timeline-1" rel="0" >
+<ul style="width:3840px">
+<li><i>2013.05.11</i><p>第一期可视化集训营——一图胜千言。</p>
+<div class="event-thumb" ><a class="venobox" id="firstlink" data-gall="gall1" href="{$CssDir/}images/video03.jpg"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+<li><i>2013.11.09</i><p>第一期出庭集训营——如何说服法官。</p>
+<div class="event-thumb" ><a class="venobox" href="{$CssDir/}images/video02.jpg"><img src="{$CssDir/}images/video02.jpg" alt=""></a></div>
+</li>
+<li><i>2014.03.08</i><p>第一期谈判集训营——获得更多回报。</p>
+<div class="event-thumb"><a class="venobox" href="{$CssDir/}images/video01.jpg"><img src="{$CssDir/}images/video01.jpg" alt=""></a></div>
+</li>
+<li><i>2014.05.10</i><p>第一期iMBA集训营——管理创造价值。</p>
+<div class="event-thumb" ><a class="venobox" href="{$CssDir/}images/video03.jpg"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+<li><i>2014.06.14</i><p>第一期证据集训营——法庭之上证据为王。</p></li>
+<li><i>2014.10.25</i><p>第一期大数据集训营——变革时代弯道超车 。</p></li>
+<li><i>2014.11.08</i><p>第一期演讲集训营——让世界听懂你。</p></li>
+<li><i>2015.01.24</i><p>第一期写作集训营——每一个文字都超出预期。</p></li>
+<li><i>2015.05.23</i><p>第一期心理学集训营——法律人的读心术。</p></li>
+<li><i>2015.06.13</i><p>第一期iMAC集训营——重新定义律师工作方式。</p></li>
+<li><i>2015.07.04</i><p>第一期法律逻辑集训营——律师与法官的共鸣路径 。</p></li>
+<li><i>2015.09.27</i><p>第一期美国行——见识比知识更重要。</p></li>
+<li><i>2015.10.17</i><p>第一期合同审查集训营——交易的理想模型。</p></li>
+<li><i>2016.09.01</i><p>Alpha时代到来——为校友打造智能时代的全新工作方式。</p></li>
+<li><i>2016.09.25</i><p>第一期欧洲行——探寻法律人背后的文化基因。</p></li>
+<li><i>2016.12.12</i><p>团队宝一周年——我们每天都在陪伴校友的律所发展与百年传承。</p>
+<div class="event-thumb" ><a href="{$CssDir/}images/video03.jpg" class="venobox"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="event-detail" id="event-detail-2" >
+<div class="container">
+<a href="javascript:;" class="close icon-close">X</a>
+<a href="javascript:;" class="prev icon-arrow-left">&lt;</a>
+<a href="javascript:;" class="next icon-arrow-right">&gt;</a>
+<div class="wrap">
+<div class="event-timeline" id="timeline-2" rel="0" >
+<ul style="width:2640px">
+<li><i>2014.01.01</i><p>鼎骋美业正式启航，一家与众不同的法学院诞生，鼎骋美业创始合伙人：胡清平、采那、诺诺多。 </p>
+<div class="event-thumb" ><a class="venobox" href="{$CssDir/}images/video01.jpg"><img src="{$CssDir/}images/video01.jpg" alt=""></a></div>
+</li>
+<li><i>2015.01.03</i><p>鼎骋美业第一次年会，雪乡，团队6人： 胡清平、采那、诺诺多、张春晓、薛莉、张萌。</p>
+<div class="event-thumb" ><a class="venobox"  href="{$CssDir/}images/video02.jpg"><img src="{$CssDir/}images/video02.jpg" alt=""></a></div>
+</li>
+<li><i>2015.08.08</i><p>鼎骋美业第一次产品年会，所有的老师和产品经理来到海拔5000米的纳木错，我们怀抱虔诚的初心，极致的追求，以给校友奉献最好的课程。</p>
+<div class="event-thumb" ><a class="venobox"  href="{$CssDir/}images/video03.jpg"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+<li><i>2015.12.30</i><p>鼎骋美业第二次年会，团队20人在美丽的大理许下了2016年的愿望，校长说，创业第三年要一路狂奔。</p>
+<div class="event-thumb"><a class="venobox"  href="{$CssDir/}images/video01.jpg"><img src="{$CssDir/}images/video01.jpg" alt=""></a></div>
+</li>
+<li><i>2016.01.04</i><p>鼎骋美业第一栋办公楼，晋商博物馆。 </p>
+<div class="event-thumb" ><a class="venobox"  href="{$CssDir/}images/video02.jpg"><img src="{$CssDir/}images/video02.jpg" alt=""></a></div>
+</li>
+<li><i>2016年</i><p>鼎骋美业开启了校园招聘。我们用法律界最高的新人薪资和改变法律界的伟大愿景，选拔了一批“自我驱动、极度自信、绝顶聪明”的未来合伙人。</p>
+<div class="event-thumb" ><a class="venobox"  href="{$CssDir/}images/video03.jpg"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+<li><i>2016.05.11</i><p>鼎骋美业团队和老师在新的办公楼举行可视化三周年庆典。创业维艰，鼎骋美业始终不忘初心。</p>
+<div class="event-thumb" ><a class="venobox"  href="{$CssDir/}images/video01.jpg"><img src="{$CssDir/}images/video01.jpg" alt=""></a></div>
+</li>
+<li><i>2016.09.07</i><p>鼎骋美业第二次产品年会，在敦煌和老师们讨论课程如何嵌进阿尔法，我们能以更快的速度让更多人受益，共同期待鼎骋美业2.0时代的到来，让视野无际，在沙漠开花。</p></li>
+<li><i>2016年</i><p>鼎骋美业合伙人团队由三位创始人变成五位合伙人，郑玮是第一门课程可视化集训营的老师，王储是内部培养的第一位合伙人。鼎骋美业橙员里，只有合伙人和未来合伙人。</p></li>
+<li><i>2016年</i><p>鼎骋美业招募了一批顶尖的计算机工程师，他们用一行行的代码构筑了技术驱动法律的新世界，他们将和法律人一起开创中国法律科技的元年。</p></li>
+<li><i>2017.01.03</i><p>鼎骋美业搬进晋商博物馆4A楼一周年，从20人到60人，从“一路狂奔”到“合众为一”，60人的合一，法律人和工程师的合一，线上和线下的合一。</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="event-detail" id="event-detail-3">
+<div class="container">
+<a href="javascript:;" class="close icon-close">X</a>
+<a href="javascript:;" class="prev icon-arrow-left">&lt;</a>
+<a href="javascript:;" class="next icon-arrow-right">&gt;</a>
+<div class="wrap">
+<div class="event-timeline" id="timeline-3" rel="0" >
+<ul style="width:2400px">
+<li><i>2014.03.22</i><p>鼎骋美业第一次走进企业——阿里巴巴法务部，之后我们去了百度法务部、华润法务部、特斯拉法务部、小米法务部。</p>
+<div class="event-thumb"><a class="venobox" href="{$CssDir/}images/video03.jpg"><img src="{$CssDir/}images/video03.jpg" alt=""></a></div>
+</li>
+<li><i>2014.04.13</i><p>鼎骋美业第一个校友会——长沙校友会成立，每周都有各地校友自发组织分享交流活动。 </p>
+<div class="event-thumb"><a class="venobox" href="{$CssDir/}images/video02.jpg"><img src="{$CssDir/}images/video02.jpg" alt=""></a></div>
+</li>
+<li><i>2014.09.27</i><p>鼎骋美业第一个专业私董会成立——知识产权私董会成立，每个专业领域的律师建立起共享合作平台。 </p>
+<div class="event-thumb"><a class="venobox" href="{$CssDir/}images/video01.jpg"><img src="{$CssDir/}images/video01.jpg" alt=""></a></div>
+</li>
+<li><i>2015.06.24</i><p>鼎骋美业第一次走进法院——东莞第二人民法院，之后我们去了北京高院、上海高院、广东高院、江苏高院、吉林高院等。 </p></li>
+<li><i>2015.07.11</i><p>鼎骋美业第一次公开课——兰州站，全国每个省都举办过公开课，几万名律师来过鼎骋美业课堂。 </p></li>
+<li><i>2016.03.19</i><p>鼎骋美业律所主任年会——长沙站，第六届律所主任年会从每年一届变成每个月一期，上千名律所主任参加过主任年会。</p></li>
+<li><i>2016.10.28</i><p>鼎骋美业第一次走进检察院——全新的定制化刑事内容，为职业共同体的技术融合又迈出了新的一步。</p></li>
+<li><i>李娟娟</i><p>鼎骋美业年龄最大的校友——她来自广东，已经70岁，不仅来上课，还参加了14天的美国行，她说在律师道路上永远要追求梦想。</p></li>
+<li><i>魏存仪</i><p>鼎骋美业第一位上完12门课程的校友——他来自兰州，第一批“团队宝”，第一批“匠心”，他骄傲的说：鼎骋美业是他唯一上过的法学院。</p></li>
+<li><i>李泳霄</i><p>鼎骋美业第一位来自新疆的校友——他运用在鼎骋美业学到的所有技术打造了一支强大的有度商事诉讼团队。2016年，每十名新疆律师，就有一位是鼎骋美业校友，新疆成为2017愿景的第一站。</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- home_event end! -->
+<div class="home_foot">
+<div class="container">
+<div class="row">
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+<div class="foot_l">
+<img src="{$CssDir/}images/QRcode.jpg" alt="二维码">
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<div class="foot_l">
+<ul>
+{ZL.Label id="输出指定节点下文章列表_不分页" NodeID="4" ShowNum="5" /}
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="foot_tel">
+<p>电话: 021-88888</p>
+<p>邮箱: 88888</p>
+<p>地址: 上海市浦东新区</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+<div class="foot_r">
+<a href="#"> <i class="fa fa-angle-right"></i>  加入鼎骋美业</a>
+<p>这里用态度和科技改变世界</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="vbox-overlay">
+<div class="vbox-content">
+<img src="/Template/鼎骋美业/style/images/video03.jpg" class="figlio">
+</div>
+<div class="vbox-close"><i class="fa fa-close"></i></div>
+</div>
+<!-- vbox-overlay end! -->
+<script src="{$CssDir/}js/venobox.min.js"></script>
+<script>
+//检测固顶事件
+var IO = document.getElementById('home_nav'),
+Y = IO,
+H = 0,
+IE6;
+IE6 = window.ActiveXObject && !window.XMLHttpRequest;
+while (Y) {
+    H += Y.offsetTop;
+    Y = Y.offsetParent
+};
+if (IE6) IO.style.cssText = "position:absolute;top:expression(this.fix?(document" + ".documentElement.scrollTop-(this.javascript||" + H + ")):0)";
+window.onscroll = function() {
+    var d = document,
+    s = Math.max(d.documentElement.scrollTop, document.body.scrollTop);
+    if (s > H && IO.fix || s <= H && !IO.fix) return;
+    if (!IE6) IO.style.position = IO.fix ? "": "fixed";
+    IO.fix = !IO.fix;
+};
+try {
+    document.execCommand("BackgroundImageCache", false, true)
+} catch(e) {};
+
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 0) {
+        $(".home_nav").addClass("active");
+    } else {
+        $(".home_nav").removeClass("active");
+    }
+});
+
+
+$(function() {
+    var width = $(window).width();
+    $("#primary .product").css("width", width);
+    $(window).resize(function() {
+        var width = $(window).width();
+        $("#primary .product").css("width", width);
+    });
+    var k = 0;
+    go(k);
+    var len = $(".go .product").length;
+    // 左侧按钮
+    $(".slidesjs-previous").click(function() {
+        var width = $(window).width();
+        $("#primary .product").css("width", width);
+        $(".go").stop(true, true).animate({
+            'margin-left': -width
+        },
+        'fast',
+        function() {
+            k++;
+            if (k == len) {
+                k = 0;
+            }
+            go(k);
+
+        });
+    });
+    // 右侧按钮
+    $(".slidesjs-next").click(function() {
+        var width = $(window).width();
+        $("#primary .product").css("width", width);
+        $(".go").stop(true, true).animate({
+            'margin-left': width
+        },
+        'fast',
+        function() {
+            k--;
+            if (k == -1) {
+                k = len - 1;
+            }
+            go(k);
+           // alert(k);
+        });
+    });
+    // 导航按钮 
+    $("#product-nav li").click(function() {
+        var k = $(this).index();
+        go(k);
+    });
+    
+    //轮播图圆点按钮
+     //$(".product:nth-child(3)").css("left",width*2);
+    $(".slidesjs-pagination-item").click(function() {
+        var width = $(window).width();
+        var index = $(this).index();
+        $(".go").stop(true, true).animate({
+            'margin-left': -width
+        },
+        'fast',
+        function() {
+            go(index);
+
+        });
+    });
+    
+    // 滑动效果
+    function go(n) {
+        var width = $(window).width();
+        $("#primary .product").css("width", width);
+        if (n == 0) {
+            $(".product").eq(n + 1).css('left', width);
+            $(".product").eq(len - 1).css('left', -width);
+        } else if (n == len - 1) {
+            $(".product").eq(0).css('left', width);
+            $(".product").eq(n - 1).css('left', -width);
+        } else {
+            $(".product").eq(n + 1).css('left', width);
+            $(".product").eq(n - 1).css('left', -width);
+        }
+
+        $("#products .go").css('margin-left', '0px');
+        $(".product").eq(n).css('left', 0);
+        $(".product").eq(n).css('zindex', 3);
+        $(".slidesjs-pagination-item a").removeClass("active").eq(n).addClass("active");
+        $("#product-nav li").siblings().find('.cc').removeClass("nav-color");
+        $("#product-nav li").eq(n).find('.cc').addClass("nav-color");
+    }
+    
+    // 点击弹出详情页
+    $(".product .intro .action .show-product ").click(function() {
+        $(".slidesjs-navigation").css('color', 'rgba(0, 0, 0, 0.2)');
+        $('body').toggleClass('show-product');
+        $("#close-product").css("opacity", 0.6);
+        $(".home_nav li a").css("color", "#333");
+
+    });
+    $("#about").click(function() {
+        $(".home_nav li a").css("color", "#333");
+        $("#close-product").css("opacity", 0.6);
+    });
+    $("#global-nav li:nth-child(2)").click(function() {
+        $('body').toggleClass('show-product');
+        $(".slidesjs-navigation").css('color', 'rgba(0, 0, 0, 0.2)');
+        $(".home_nav li a").css("color", "#333");
+        $("#close-product").css("opacity", 0.6);
+
+    })
+    // 点击隐藏弹出的页面
+    $("#close-product ").click(function() {
+        $('body').removeClass();
+        $(this).css("opacity", 0);
+        $(".home_nav li a").css("color", "#fff");
+    })
+
+    // 点击显示照片
+    $("#event-buttons li").click(function() {
+        var n = $(this).index();
+        // alert(1);
+        $('.event-detail').eq(n).addClass("show");
+    })
+    // 点击隐藏照片
+    $(".icon-close").click(function() {
+        $(".event-detail").removeClass("show");
+        $(".event-timeline").css('margin-left', '0');
+    })
+    // 图片框两侧按钮
+    $(".icon-arrow-right").click(function() {
+        var n = $(this).siblings('.wrap').width();
+        var m = $(this).siblings('.wrap').find('ul').width();
+        // alert(m);
+        var go = Math.ceil((m - n) / n);
+        k++;
+
+        if (k == go) {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -m + n
+            },
+            100);
+        } else if (k > go) {
+            k = 0;
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': 0
+            },
+            100);
+        } else {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -k * n
+            },
+            100);
+        }
+    });
+    $(".icon-arrow-left").click(function() {
+        var n = $(this).siblings('.wrap').width();
+        var m = $(this).siblings('.wrap').find('ul').width();
+        // alert(m);
+        var go = Math.ceil((m - n) / n);
+        k--;
+
+        if (k == go) {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -m + n
+            },
+            100);
+        } else if (k < go) {
+            k = go;
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': 0
+            },
+            100);
+        } else {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -k * n
+            },
+            100);
+        }
+    });
+     $(".event-detail ul li").click(function() {
+            $(".lightbox").css('display', 'block');
+    });
+
+    //视频显示隐藏
+    $(".video_play").css("display", "none");
+    $(".close_video").click(function() {
+        $(".video_play").hide();
+    });
+    $(".home_video .col-lg-5").click(function() {
+        var m = $(this).index();
+        $(".video_play").hide();
+        $(".video_play").eq(m).show();
+    });
+});
+
+//大事记
+$("#event-buttons li").mouseenter(function() {
+    var index = $(this).index();
+    if (index == 0) {
+        $("#event-photos li:nth-child(7)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(17)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(28)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(12)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(14)").css("opacity", 0.5);
+    }
+    if (index == 1) {
+        $("#event-photos li:nth-child(2)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(29)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(27)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(16)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(14)").css("opacity", 0.5);
+
+    }
+    if (index == 2) {
+        $("#event-photos li:nth-child(5)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(18)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(24)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(3)").css("opacity", 0.5);
+        $("#event-photos li:nth-child(30)").css("opacity", 0.5);
+    }
+}).mouseleave(function() {
+    $("#event-photos li").css("opacity", 0.15);
+});
+</script>
+
+<script>
+
+    // 点击显示照片
+    $("#event-buttons li").click(function() {
+        var n = $(this).index();
+        // alert(1);
+        $('.event-detail').eq(n).addClass("show");
+    })
+    // 点击隐藏照片
+    $(".icon-close").click(function() {
+        $(".event-detail").removeClass("show");
+        $(".event-timeline").css('margin-left', '0');
+    });
+  
+     $(".event-detail ul li").click(function() {
+            $(".lightbox").css('display', 'block');
+    });
+    // 图片框两侧按钮
+    var k=0;
+    $(".icon-arrow-right").click(function() {
+        var n = $(this).siblings('.wrap').width();
+        var m = $(this).siblings('.wrap').find('ul').width();
+        // alert(m);
+        var go = Math.ceil((m - n) / n);
+        k++;
+
+        if (k == go) {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -m + n
+            },
+            100);
+        } else if (k > go) {
+            k = 0;
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': 0
+            },
+            100);
+        } else {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -k * n
+            },
+            100);
+        }
+    });
+    $(".icon-arrow-left").click(function() {
+        var n = $(this).siblings('.wrap').width();
+        var m = $(this).siblings('.wrap').find('ul').width();
+        // alert(m);
+        var go = Math.ceil((m - n) / n);
+        k--;
+
+        if (k == go) {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -m + n
+            },
+            100);
+        } else if (k < go) {
+            k = go;
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': 0
+            },
+            100);
+        } else {
+            $(this).siblings('.wrap').find(".event-timeline").animate({
+                'margin-left': -k * n
+            },
+            100);
+        }
+    });
+     $(".event-detail ul li").click(function() {
+            $(".lightbox").css('display', 'block');
+    });
+    
+//视频显示隐藏
+  $(".video_play").css("display", "none");
+  $(".close_video").click(function() {
+      $(".video_play").hide();
+  });
+  $(".home_video .col-md-5").click(function() {
+      var m = $(this).index();
+      $(".video_play").hide();
+      $(".video_play").eq(m).show();
+  });
+
+
+//点击事件显示照片
+$(".event-thumb a").click(function(e){
+    e.stopPropagation();
+    $(".vbox-overlay").height($(window).height()).css("display","block");
+    //$("body,html").height($(window).height()).css("overflow","hidden");
+    var imgUrl = $(this).attr("href");
+    //alert( $(this).attr("href"));
+    $(".vbox-content img").attr("src",imgUrl);
+    $(this).attr("href","javascript:;");
+});
+$(".vbox-close i").click(function(){
+    $(".vbox-overlay").css("display","none");
+    //location.reload();
+});
+
+</script>
+</body>
+</html>

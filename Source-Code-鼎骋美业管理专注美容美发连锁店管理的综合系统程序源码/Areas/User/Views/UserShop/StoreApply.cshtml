@@ -1,0 +1,30 @@
+﻿@using ZoomLa.BLL
+@using ZoomLaCMS.Models.Field
+@using ZoomLa.AppCode.Controls
+@using System.Data
+@model ZoomLa.Model.M_CommonData
+@{
+    
+ 
+}
+@section head{
+}
+@section content{
+    <ul class="topnav">
+    <li id="nav0" class="active"><a href="/User/UserShop/Index">店铺配置</a></li>
+    <li id="nav1"><a href="/Extend/UA/Bonus.aspx">提成管理</a></li>
+    <li id="nav2"><a href="/Extend/Employee.aspx">员工管理</a></li>
+    <li id="nav3"><a href="/Extend/UA/ERole.aspx">员工角色</a></li>
+    <div style="clear:both;"></div>
+</ul>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a title="会员中心" href="@Url.Action("Default","")">会员中心</a></li>
+    <li class="breadcrumb-item active">
+        店铺配置
+    </li>
+</ol>
+    <div class="alert alert-info">只有店长可访问该页面</div>
+}
+@section script{
+
+}

@@ -1,0 +1,129 @@
+﻿@using System.Data;
+@using ZoomLa.BLL
+@using ZoomLa.BLL.Helper
+@using ZoomLa.BLL.Shop;
+@using ZoomLa.Common;
+@using ZoomLa.Components;
+@using ZoomLa.Model;
+@using ZoomLa.Model.Shop;
+@using ZoomLa.SQLDAL
+@model ZoomLaCMS.Areas.User.Models.OrderViewModel
+@functions{
+    B_Payment payBll = new B_Payment();
+    public MvcHtmlString BindOrderOP(DataRow dr)
+    {
+        M_Payment payMod = payBll.SelModelByPayNo(DataConvert.CStr(dr["PaymentNo"]));
+        if (payMod == null)
+        {
+            payMod = new M_Payment();
+            payMod.Status = 1;
+            payMod.MoneyReal = Convert.ToDouble(dr["OrdersAmount"]);
+        }
+        int count = Model.GetProByOrder(DataConvert.CStr(dr["OrderNo"])).Rows.Count;
+        //收货人 <td class='td_md gray9' rowspan='" + count + "'><i class='fa fa-user'> " + dr["AddUser"] + "</i></td>
+        string html = "";
+        //金额栏
+        html += "<td class='rowtd' rowspan='" + count + "' style='font-size:12px;width:150px;'>";
+        html += "<div>总计:" + Convert.ToDouble(dr["OrdersAmount"]).ToString("f2") + "</div>";
+
+        html += "<div>商品:" + (DataConvert.CDouble(dr["OrdersAmount"]) - DataConvert.CDouble(dr["Freight"])).ToString("F2") + "</div>";
+        html += "<div>运费:" + DataConvert.CDouble(dr["Freight"]).ToString("F2") + "</div>";
+        html += "<div title='优惠券'>优惠:" + payMod.ArriveMoney.ToString("F2") + "</div>";
+        html += "<div>积分:" + payMod.UsePointArrive.ToString("f2") + "(" + payMod.UsePoint.ToString("F0") + ")</div>";
+        html += "<div style='color:#d9534f;'>需付:" + payMod.MoneyReal.ToString("F2") + "</div>";
+        //if (!string.IsNullOrEmpty(DataConvert.CStr(dr["PaymentNo"])))
+        //{
+        //    string plat = platBll.GetPayPlatName(DataConvert.CStr(dr["PaymentNo"]));
+        //    html += "<div><span style='color:#337ab7;'>" + plat + "</span>"
+        //        + "(" + OrderHelper.GetStatus(dr, OrderHelper.TypeEnum.Pay) + ")</div>";
+        //}
+        //else
+        //{
+        html += "<div>(" + OrderHelper.GetStatus(dr, OrderHelper.TypeEnum.Pay) + ")</div>";
+        //}
+        html += "</td>";
+
+        //订单状态
+        html += "<td class='td_md rowtd' rowspan='" + count + "'><span class='gray9'></span> <br />";
+        html += "</td>";
+        //操作栏
+        //string orderInfoUrl = (usefor.Equals("store") ? "/BU/Order/OrderListInfo.aspx?ID=" + dr["ID"] : "OrderProList?OrderNo=" + dr["OrderNo"]);
+        //判断是否付款
+        html += "<td class='td_md rowtd' rowspan='" + count + "'>";
+        //如果未支付,则允许快速开单
+        if (payMod.Status==(int)M_Payment.PayStatus.NoPay)
+        {
+            html += "<a href='/Extend/Order/FastOrder.aspx?ID="+dr["ID"]+"' class='btn btn-info btn-sm'>快速开单</a>";
+        }
+        html += "</td>";
+        return MvcHtmlString.Create(html);
+    }
+}
+@{
+    Model.setting.cols = 5;
+    Model.setting.url = "OrderList";
+    Model.setting.page_wrap_start = "<div class='clearfix'></div><div class='text-center' style='border:1px solid #ddd;padding:5px;border-top:none;'>";
+    Model.setting.page_wrap_end = "</div>";
+    Model.setting.Check = false;
+    
+}
+<div id="EGV">
+    <table class="table">
+        <thead class="top_div">
+            <tr>
+                <th class="text-center">订单详情</th>
+                <th class="td_md">数量</th>
+                <th class="td_md">总计</th>
+                <th class="td_md">状态</th>
+                <th class="td_md">操作</th>
+            </tr>
+        </thead>
+    </table>
+    @foreach (DataRow order in Model.OrderDT.Rows)
+    {
+        DataTable prodt = Model.GetProByOrder(order["OrderNo"].ToString());
+        <div class="order-item">
+            <table class="table prolist">
+                <thead>
+                    <tr class="tips_div">
+                        <th class="orderinfo" colspan="1">
+                        <span class="order_ico@(order["OrderType"])"></span>
+                        <span class="gray9" style="font-size:12px;">@order["AddTime"]</span> 
+                        <span>ID：@order["ID"]</span>
+                        <span><i class="fa fa-user"></i> @(ZoomLa.BLL.B_User.GetUserHoney(Convert.ToInt32(order["UserID"])))</span>
+                        </th>
+                        <th class="shopinfo" colspan="4">
+                            @Model.GetStoreName(Convert.ToInt32(order["StoreID"]))
+                        </th>
+                        <th class="opinfo">
+                            @*<asp:linkbutton visible="false" runat="server" commandargument='@order["ID"]' commandname="del2" onclientclick="return confirm('您确定要删除该订单吗？');"><i class="fa fa-trash" title="删除"></i></asp:linkbutton>*@
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="prowrap">
+                    @for (int i = 0; i < prodt.Rows.Count; i++)
+                    {
+                        DataRow product = prodt.Rows[i];
+                        <tr class="@(i>4 ? "pro_more hidden" : "")">
+                            <td style="text-align:left;border-right:none;border-left:none;">
+                                <span>
+                                    <a href="@Model.GetShopUrl(product)" target="_blank"><img src="@Model.GetImgUrl(product)" onerror="shownopic(this);" class="img50" /></a>
+                                    <span>@product["Proname"]@MvcHtmlString.Create(Model.GetSnap(product))</span>
+                                </span>
+                            </td>
+                            <td class="td_md goodservice" style="border-left:none;"></td>
+                            <td class="td_md gray9">x@(product["Pronum"])</td>
+                            @if (i == 0)
+                            {
+                                @BindOrderOP(product)
+                                @*@Model.BindOrderOP(product)*@
+                            }
+                        </tr>
+                    }
+                    @MvcHtmlString.Create(Model.GetMessage(order))
+                </tbody>
+            </table>
+        </div>
+    }
+    @Html.Partial("_page", Model.setting)
+</div>

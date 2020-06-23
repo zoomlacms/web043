@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <LabelID>318</LabelID>
+    <LabelName>全站头部</LabelName>
+    <LabelType>1</LabelType>
+    <LabelCate>静态标签</LabelCate>
+    <LabelDesc />
+    <LabelParam />
+    <LabelTable />
+    <LabelField />
+    <LabelWhere />
+    <LabelOrder />
+    <LabelContent>&lt;div class="home_nav d-none d-sm-block" id="home_nav"&gt;
+&lt;div class="container"&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light" id="home_nav"&gt;
+&lt;a class="navbar-brand mr-2 d-block d-sm-none" href="/"&gt;&lt;img src="{$LogoUrl/}" alt="{$SiteName/}" onerror="javascript:this.src='/images/logo.svg'" /&gt;&lt;/a&gt;
+&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"&gt;
+&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNavDropdown"&gt;
+&lt;ul class="navbar-nav"&gt;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/"&gt;首页&lt;/a&gt;&lt;/li&gt;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="{ZL:GetNodeLinkUrl(3)/}"&gt;功能介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="{ZL:GetInfoUrl(9)/}"&gt;使用帮助&lt;/a&gt;&lt;/li&gt;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="{ZL:GetInfoUrl(10)/}"&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/User"&gt; &lt;i class="fa fa-user"&gt;&lt;/i&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;a href="javascript:;" id="close-product" class="icon-close"&gt;X&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- home_nav end! --&gt;</LabelContent>
+    <LabelCount />
+    <LabelAddUser>0</LabelAddUser>
+    <LabelNodeID>0</LabelNodeID>
+    <Modeltypeinfo>计数判断</Modeltypeinfo>
+    <addroot>循环计算</addroot>
+    <setroot>等于</setroot>
+    <Modelvalue />
+    <Valueroot />
+    <IsOpen>0</IsOpen>
+    <FalseContent />
+    <DataSourceType />
+    <ConnectString />
+    <ProceName />
+    <ProceParam />
+  </Table>
+</NewDataSet>
